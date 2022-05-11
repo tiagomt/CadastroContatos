@@ -1,0 +1,108 @@
+.divTelefone {
+
+    display: inline-block;
+
+}
+
+
+input {
+
+    display: inline-block;
+}
+
+.divEmail2,
+.divTelefone2 {
+
+    display: none;
+
+}
+
+/* estilo tabela */
+#tabela {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+
+}
+
+#tabela th {
+
+    background-color: #5b9bd5;
+    color: #fff;
+
+}
+
+#tabela td,
+#tabela th {
+    text-align: center;
+    padding: 12px;
+    border: 1px solid #000000;
+
+}
+
+#tabela tr:nth-child(2n) {
+
+    background-color: #bdd7ee;
+
+}
+
+
+#tabela tr {
+    border: 1px solid #ddd;
+    background-color: #ddebf7;
+}
+
+#tabela tr.header,
+#tabela tr:hover {
+    background-color: #6cace6;
+}
+
+#entradaSearch {
+
+    padding: 12px;
+    background-image: url('../images/searchIcon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    padding: 12px 20px 12px 40px;
+    width: 10%;
+
+}
+
+#entradaSearch:focus {
+
+    width: 24%;
+
+}
+
+.fa-trash,
+.fa-pencil-square-o {
+
+    color: black;
+}
+
+.fa-trash:visited,
+.fa-pencil-square-o:visited {
+
+    color: inherit;
+
+}
+
+.paginas {
+
+    width: 50%;
+    text-align: center;
+    padding: 12px 0;
+    background-color: #555;
+    color: #fff;
+    text-decoration: none;
+    font-size: 36px;
+
+}
+
+.paginas:hover {
+
+    background-color: #04AA6D;
+
+}
