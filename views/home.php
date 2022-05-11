@@ -1,1 +1,1 @@
-<h2>Bem vindo a página inicial</h3>
+<h2 class="home">Bem vindo a página inicial</h3>

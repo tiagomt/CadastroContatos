@@ -11,6 +11,10 @@ let botEnviar
 let fecha
 let excluirContato
 let entrada
+let todosText
+let msgErro
+
+
 
 
 if (document.getElementById("entradaSearch")) {
@@ -38,6 +42,8 @@ if (document.querySelector(".excluirContato")) {
 
 if (document.querySelector(".cpf")) {
 
+
+
     nome = document.querySelector(".nome")
     sobrenome = document.querySelector(".sobrenome")
     email = document.querySelector(".email")
@@ -49,7 +55,20 @@ if (document.querySelector(".cpf")) {
     divTelefone2 = document.querySelector(".divTelefone2")
     botEnviar = document.querySelector(".enviar")
     fecha = document.querySelectorAll(".fecha")
+    todosText = document.querySelectorAll("input[type=text]")
+    msgErro = document.querySelector(".errosForm")
 
+
+    todosText.forEach((e) => {
+
+        e.addEventListener("input", () => {
+
+            e.style.boxShadow = "#000000 1px 2px 6px"
+            msgErro.style.display = "none"
+
+        })
+
+    })
 
     cpf.addEventListener("input", () => {
         validaEntrada(cpf)
@@ -70,29 +89,25 @@ if (document.querySelector(".cpf")) {
 
             if (f.classList.contains("email")) {
 
-                if (f.classList.contains("+")) {
-                    f.classList.remove("+")
-                    f.classList.add("x")
+                if (f.classList.contains("fa-plus")) {
+                    f.classList.remove("fa-plus")
+                    f.classList.add("fa-minus")
                     divEmail2.style.display = "block"
-                    f.innerHTML = "x"
                 } else {
-                    f.classList.remove("x")
-                    f.classList.add("+")
+                    f.classList.remove("fa-minus")
+                    f.classList.add("fa-plus")
                     divEmail2.style.display = "none"
-                    f.innerHTML = "+"
                 }
             } else {
 
-                if (f.classList.contains("+")) {
-                    f.classList.remove("+")
-                    f.classList.add("x")
+                if (f.classList.contains("fa-plus")) {
+                    f.classList.remove("fa-plus")
+                    f.classList.add("fa-minus")
                     divTelefone2.style.display = "block"
-                    f.innerHTML = "x"
                 } else {
-                    f.classList.remove("x")
-                    f.classList.add("+")
+                    f.classList.remove("fa-minus")
+                    f.classList.add("fa-plus")
                     divTelefone2.style.display = "none"
-                    f.innerHTML = "+"
                 }
 
             }
@@ -103,22 +118,39 @@ if (document.querySelector(".cpf")) {
 
 
 
+
     botEnviar.addEventListener("click", (event) => {
 
-        if (!validaTelefone(telefone) || !validaNomeSobrenome(nome) || !validaNomeSobrenome(sobrenome)) {
+        if (!validaTelefone(telefone) || !validaNomeSobrenome(nome) || !validaNomeSobrenome(sobrenome) || !validaEmail(email) || !validaEntrada(cpf)) {
+
+
+            if (!validaEntrada(cpf)) {
+                cpf.style.boxShadow = "1px 2px 6px red"
+                cpf.value = ""
+            }
+
+            if (!validaEmail(email)) {
+                email.style.boxShadow = "1px 2px 6px red"
+                email.value = ""
+            }
 
             if (!validaTelefone(telefone)) {
-                alert("Telefone inválido")
+                telefone.style.boxShadow = "1px 2px 6px red"
+                telefone.value = ""
             }
 
             if (!validaNomeSobrenome(nome)) {
-                alert("Nome inválido")
+                nome.style.boxShadow = "1px 2px 6px red"
+                nome.value = ""
+
             }
 
             if (!validaNomeSobrenome(sobrenome)) {
-                alert("Sobrenome inválido")
+                sobrenome.style.boxShadow = "1px 2px 6px red"
+                sobrenome.value = ""
             }
 
+            msgErro.style.display = "block"
             event.preventDefault()
         }
 
@@ -177,14 +209,7 @@ function validaEntrada(elem) {
         let cpf = elem.value
         cpf = cpf.replace(reg, "")
 
-        if (validaCPF(cpf)) {
-            alert("CPF valido")
-        } else {
-
-            alert("CPF invalido")
-
-        }
-
+        return validaCPF(cpf)
     }
 
 

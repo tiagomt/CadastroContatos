@@ -1,3 +1,78 @@
+body {
+
+    height: 100vh;
+    background-color: #aaaadd;
+
+
+
+
+}
+
+.principal {
+
+    display: flex;
+    justify-content: center;
+    max-height: 150vh;
+    align-items: center;
+
+
+}
+
+.conteudos {
+
+    padding: 20px;
+    border: 1px solid;
+    justify-content: center;
+
+
+}
+
+.paginas {
+
+    text-align: center;
+    padding: 12px;
+    background-color: #555;
+    color: #fff;
+    text-decoration: none;
+    font-size: 36px;
+    border-radius: 10px;
+    box-shadow: #000000 1px 2px 6px;
+    margin: 10px;
+    display: block;
+    float: left;
+    height: 5vh;
+    width: 30vh;
+
+
+}
+
+.inserirNovo {
+
+    text-decoration: none;
+    color: #fff;
+    background: #242acb;
+    display: inline-block;
+    padding: 5px;
+    height: 20px;
+    border-radius: 6px;
+    text-shadow: 2px 2px 2px black;
+}
+
+.inserirNovo:hover {
+
+    background-color: #5b9bd5;
+
+}
+
+#listaContatos {
+
+    font-family: 'Courier New', Courier, monospace;
+    color: blue;
+    text-shadow: #000000 1px 2px 3px;
+    clear: both;
+
+}
+
 .divTelefone {
 
     display: inline-block;
@@ -23,6 +98,7 @@ input {
     width: 100%;
     border: 1px solid #ddd;
     font-size: 18px;
+    box-shadow: #000000 1px 2px 6px;
 
 }
 
@@ -67,6 +143,7 @@ input {
     border-radius: 5px;
     padding: 12px 20px 12px 40px;
     width: 10%;
+    box-shadow: #000000 1px 2px 6px;
 
 }
 
@@ -89,20 +166,106 @@ input {
 
 }
 
-.paginas {
-
-    width: 50%;
-    text-align: center;
-    padding: 12px 0;
-    background-color: #555;
-    color: #fff;
-    text-decoration: none;
-    font-size: 36px;
-
-}
 
 .paginas:hover {
 
-    background-color: #04AA6D;
+    background-color: #2377ec;
+
+}
+
+form input[type=text] {
+
+    width: 96%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    box-shadow: #000000 1px 2px 6px;
+}
+
+form input[type=submit] {
+
+
+    width: 10vw;
+    height: 5vh;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+form input[type=submit]:hover {
+
+    background: #ccc;
+
+}
+
+label {
+
+    font-weight: bolder;
+
+}
+
+.home,
+footer {
+
+    text-align: center;
+
+}
+
+.home {
+
+    font-family: 'Courier New', Courier, monospace;
+    color: blue;
+    text-shadow: #000000 1px 2px 3px;
+    clear: both;
+
+}
+
+footer {
+
+    font-weight: lighter;
+    font-family: monospace;
+
+
+}
+
+footer a {
+
+    color: #000000;
+    text-decoration: none;
+
+}
+
+.fa-plus {
+    color: green;
+
+}
+
+.fa-minus {
+    color: red;
+
+}
+
+.formContainer {
+
+    background-color: #aa99ee;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 2px 8px #000000;
+}
+
+.errosForm {
+
+    background-color: #f3bebe;
+    border-radius: 10px;
+    color: red;
+    font-weight: bolder;
+    box-shadow: 1px 2px 8px red;
+    padding: 5px;
+    width: 93%;
+    text-align: center;
+    display: none;
 
 }

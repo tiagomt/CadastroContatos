@@ -1,6 +1,7 @@
-<p>Contatos</p>
+<h1 id="listaContatos">Lista de contatos</h1>
 
-<a href="?pagina=inserir_usuario">Inserir novo contato</a><br><br>
+<a href="?pagina=inserir_usuario" class="inserirNovo"><i class="fa fa-plus-circle" aria-hidden="true"></i> Inserir contato</a><br><br>
+
 
 <input type="text" id="entradaSearch" onkeyup="search()" placeholder="Procurar por CPFs" title="Digite o CPF"><br><br>
 

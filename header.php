@@ -12,5 +12,7 @@
 
 <body>
 
-    <a href="?pagina=home" class="btnHome paginas"><i class="fa fa-home"></i>Home</a>
-    <a href="?pagina=usuarios" class="btnContatos paginas"><i class="fa fa-fw fa-user"></i>Contatos</a>
+    <div class="principal">
+        <div class="conteudos">
+            <a href="?pagina=home" class="btnHome paginas"><i class="fa fa-home"></i>Home</a>
+            <a href="?pagina=usuarios" class="btnContatos paginas"><i class="fa fa-fw fa-user"></i>Contatos</a>

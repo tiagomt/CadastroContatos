@@ -1,8 +1,9 @@
 <footer>
 
-    <h3>Esse é o footer</h3>
+    <p>Desenvolvido por <a href="https://github.com/tiagomt">Tiago</a></p>
 
 </footer>
+</div>
 </div>
 
 <script src="https://unpkg.com/imask"></script>
