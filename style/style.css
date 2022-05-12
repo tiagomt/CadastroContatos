@@ -1,9 +1,13 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
 body {
 
     height: 100vh;
-    background-color: #aaaadd;
-
-
+    background-color: #b8b8e9;
 
 
 }
@@ -12,7 +16,7 @@ body {
 
     display: flex;
     justify-content: center;
-    max-height: 150vh;
+    height: 100vh;
     align-items: center;
 
 
@@ -20,118 +24,119 @@ body {
 
 .conteudos {
 
-    padding: 20px;
-    border: 1px solid;
+    padding: 5px;
     justify-content: center;
+    align-self: center;
 
 
 }
 
 .paginas {
 
-    text-align: center;
-    padding: 12px;
     background-color: #555;
-    color: #fff;
-    text-decoration: none;
-    font-size: 36px;
     border-radius: 10px;
     box-shadow: #000000 1px 2px 6px;
+    padding: 12px;
     margin: 10px;
     display: block;
     float: left;
     height: 5vh;
     width: 30vh;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 36px;
 
+}
+
+.paginas:hover {
+
+    background-color: #2377ec;
+    color: #f8f8ae;
+
+}
+
+
+.inserirNovo,
+form input[type=submit] {
+
+    border-radius: 6px;
+    background: #242acb;
+    box-shadow: #000000 1px 2px 3px;
+    padding: 5px;
+    color: #fff;
+    text-shadow: 2px 2px 2px black;
+    text-decoration: none;
 
 }
 
 .inserirNovo {
 
-    text-decoration: none;
-    color: #fff;
-    background: #242acb;
+    height: 2.5vh;
     display: inline-block;
+
+}
+
+.formContainer {
+
+    background-color: #aa99ee;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 2px 8px #000000;
+}
+
+.errosForm {
+
+    display: none;
+    background-color: #f3bebe;
+    border-radius: 10px;
+    box-shadow: 1px 2px 8px red;
+    width: 93%;
     padding: 5px;
-    height: 20px;
-    border-radius: 6px;
-    text-shadow: 2px 2px 2px black;
-}
-
-.inserirNovo:hover {
-
-    background-color: #5b9bd5;
+    color: red;
+    font-weight: bolder;
+    text-align: center;
 
 }
-
-#listaContatos {
-
-    font-family: 'Courier New', Courier, monospace;
-    color: blue;
-    text-shadow: #000000 1px 2px 3px;
-    clear: both;
-
-}
-
-.divTelefone {
-
-    display: inline-block;
-
-}
-
 
 input {
 
     display: inline-block;
 }
 
-.divEmail2,
-.divTelefone2 {
+form input[type=submit] {
 
-    display: none;
 
+    width: 10vw;
+    height: 5vh;
 }
 
-/* estilo tabela */
-#tabela {
-    border-collapse: collapse;
-    width: 100%;
-    border: 1px solid #ddd;
-    font-size: 18px;
+form input[type=text] {
+
+    width: 96%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 10px;
     box-shadow: #000000 1px 2px 6px;
-
 }
 
-#tabela th {
+form input[type=text]:hover {
+
+    box-shadow: none;
+}
+
+
+.inserirNovo:hover,
+form input[type=submit]:hover {
 
     background-color: #5b9bd5;
-    color: #fff;
+    box-shadow: #665 1px 2px 3px;
+    cursor: pointer;
+    border: none;
 
-}
-
-#tabela td,
-#tabela th {
-    text-align: center;
-    padding: 12px;
-    border: 1px solid #000000;
-
-}
-
-#tabela tr:nth-child(2n) {
-
-    background-color: #bdd7ee;
-
-}
-
-
-#tabela tr {
-    border: 1px solid #ddd;
-    background-color: #ddebf7;
-}
-
-#tabela tr.header,
-#tabela tr:hover {
-    background-color: #6cace6;
 }
 
 #entradaSearch {
@@ -153,10 +158,88 @@ input {
 
 }
 
-.fa-trash,
-.fa-pencil-square-o {
+#entradaSearch:focus,
+.inserirNovo:hover,
+.paginas:hover,
+form input[type=text]:hover,
+form input[type=submit]:hover {
 
-    color: black;
+    transition: all linear 0.3s;
+
+}
+
+/* estilo tabela */
+#tabela {
+
+    border-collapse: separate;
+    border-spacing: 0, .15em;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 18px;
+    box-shadow: #000000 1px 2px 6px;
+
+}
+
+#tabela th {
+
+    color: #fff;
+    background-color: #5b9bd5;
+
+
+}
+
+#tabela tr {
+
+    background-color: #ddebf7;
+
+}
+
+#tabela tr:nth-child(2n) {
+
+    background-color: #bdd7ee;
+
+}
+
+
+#tabela td,
+#tabela th {
+
+    text-align: center;
+    padding: 12px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px #888;
+
+}
+
+
+#tabela tr.header,
+#tabela tr:hover {
+    background-color: #6cace6;
+}
+
+#tabela tr:hover {
+
+    color: #fff;
+
+}
+
+a {
+
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.fa-trash:hover {
+
+    color: #f00;
+
+}
+
+.fa-pencil-square-o:hover {
+
+    color: #0f0;
+
 }
 
 .fa-trash:visited,
@@ -167,39 +250,15 @@ input {
 }
 
 
-.paginas:hover {
+.divEmail2,
+.divTelefone2 {
 
-    background-color: #2377ec;
-
-}
-
-form input[type=text] {
-
-    width: 96%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    box-shadow: #000000 1px 2px 6px;
-}
-
-form input[type=submit] {
-
-
-    width: 10vw;
-    height: 5vh;
-    cursor: pointer;
-    border-radius: 5px;
+    display: none;
 
 }
 
-form input[type=submit]:hover {
 
-    background: #ccc;
 
-}
 
 label {
 
@@ -214,6 +273,8 @@ footer {
 
 }
 
+
+
 .home {
 
     font-family: 'Courier New', Courier, monospace;
@@ -223,20 +284,15 @@ footer {
 
 }
 
-footer {
+#listaContatos {
 
-    font-weight: lighter;
-    font-family: monospace;
-
-
-}
-
-footer a {
-
-    color: #000000;
-    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    color: blue;
+    text-shadow: #000000 1px 2px 3px;
+    clear: both;
 
 }
+
 
 .fa-plus {
     color: green;
@@ -248,24 +304,23 @@ footer a {
 
 }
 
-.formContainer {
+.fa-plus,
+.fa-minus {
 
-    background-color: #aa99ee;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 1px 2px 8px #000000;
+    cursor: pointer;
 }
 
-.errosForm {
 
-    background-color: #f3bebe;
-    border-radius: 10px;
-    color: red;
-    font-weight: bolder;
-    box-shadow: 1px 2px 8px red;
-    padding: 5px;
-    width: 93%;
-    text-align: center;
-    display: none;
+footer {
+
+    font-weight: lighter;
+    font-family: monospace;
+
+}
+
+footer a {
+
+    color: #000000;
+    text-decoration: none;
 
 }

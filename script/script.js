@@ -16,19 +16,18 @@ let msgErro
 
 
 
-
 if (document.getElementById("entradaSearch")) {
     entrada = document.getElementById("entradaSearch")
 }
 
-
+// tratando botões exclusão
 if (document.querySelector(".excluirContato")) {
     excluirContato = document.querySelectorAll(".excluirContato")
     excluirContato.forEach((btn) => {
 
         btn.addEventListener("click", (event) => {
 
-            if (!confirm("Tem certeza que quer excluir?")) {
+            if (!confirm("Tem certeza que deseja excluir?")) {
 
                 event.preventDefault()
 
@@ -39,7 +38,7 @@ if (document.querySelector(".excluirContato")) {
 }
 
 
-
+// fluxo principal
 if (document.querySelector(".cpf")) {
 
 
@@ -63,7 +62,7 @@ if (document.querySelector(".cpf")) {
 
         e.addEventListener("input", () => {
 
-            e.style.boxShadow = "#000000 1px 2px 6px"
+            e.style.boxShadow = "inherit"
             msgErro.style.display = "none"
 
         })
@@ -71,7 +70,7 @@ if (document.querySelector(".cpf")) {
     })
 
     cpf.addEventListener("input", () => {
-        validaEntrada(cpf)
+        removeStr(cpf)
 
     })
 
@@ -121,10 +120,29 @@ if (document.querySelector(".cpf")) {
 
     botEnviar.addEventListener("click", (event) => {
 
-        if (!validaTelefone(telefone) || !validaNomeSobrenome(nome) || !validaNomeSobrenome(sobrenome) || !validaEmail(email) || !validaEntrada(cpf)) {
+        if (!validaTelefone(telefone) || !validaNomeSobrenome(nome) || !validaNomeSobrenome(sobrenome) || !validaEmail(email) || !validaCPF(mask2.unmaskedValue)) {
+
+            try {
+                if (divEmail2.style.display || divTelefone2.style.display) {
+                    if (divEmail2.style.display) {
+
+                        email2.style.boxShadow = "1px 2px 6px red"
+                        email2.value = ""
+                    }
+
+                    if (divTelefone2.style.display) {
+
+                        telefone2.style.boxShadow = "1px 2px 6px red"
+                        telefone2.value = ""
+                    }
+                }
+            } catch (err) {
 
 
-            if (!validaEntrada(cpf)) {
+
+            }
+
+            if (!validaCPF(mask2.unmaskedValue)) {
                 cpf.style.boxShadow = "1px 2px 6px red"
                 cpf.value = ""
             }
@@ -133,6 +151,7 @@ if (document.querySelector(".cpf")) {
                 email.style.boxShadow = "1px 2px 6px red"
                 email.value = ""
             }
+
 
             if (!validaTelefone(telefone)) {
                 telefone.style.boxShadow = "1px 2px 6px red"
@@ -152,29 +171,13 @@ if (document.querySelector(".cpf")) {
 
             msgErro.style.display = "block"
             event.preventDefault()
+
         }
 
     })
 }
 
 
-
-
-function abreFecha(f, elemn) {
-
-    if (f.classList.contains("+")) {
-        f.classList.remove("+")
-        f.classList.add("x")
-        elemn.style.display = "block"
-        f.innerHTML = "x"
-    } else {
-        f.classList.remove("x")
-        f.classList.add("+")
-        elemn.style.display = "none"
-        f.innerHTML = "+"
-    }
-
-}
 
 function validaTelefone(telefone) {
 
@@ -200,22 +203,8 @@ function validaEmail(email) {
 
 }
 
-function validaEntrada(elem) {
 
-    removeStr(elem)
-    if (elem.value.length >= 12) {
-
-        reg = /\W/
-        let cpf = elem.value
-        cpf = cpf.replace(reg, "")
-
-        return validaCPF(cpf)
-    }
-
-
-}
-
-//removendo string campo cpf
+//removendo string campos cpf e telefone
 function removeStr(elem) {
 
     elem.value = elem.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
@@ -299,3 +288,4 @@ if (cpf) {
 if (entrada) {
     var mask4 = IMask(entrada, maskOptions2);
 }
+

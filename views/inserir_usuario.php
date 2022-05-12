@@ -6,40 +6,40 @@ if (!isset($_GET['editar'])) {
     <h1 class="home">Inserir contato</h1>
 
     <div class="formContainer">
-        <form action="./processa_usuario.php" method="post">
+        <form action="./processa_usuario.php" method="post" autocomplete="off">
 
             <label for="nome">Nome:* </label>
             <br>
-            <input type="text" maxlength="255" name="nome" class="nome" id="">
+            <input type="text" maxlength="255" name="nome" class="nome" id="" placeholder="Digite o nome">
             <br>
 
             <label for="sobrenome">Sobrenome:* </label><br>
-            <input type="text" maxlength="255" name="sobrenome" class="sobrenome" id="">
+            <input type="text" maxlength="255" name="sobrenome" class="sobrenome" id="" placeholder="Digite o sobrenome">
             <br>
 
-            <label for="cpf">CPF: </label>
+            <label for="cpf">CPF:* </label>
             <br>
-            <input type="text" maxlength="14" name="cpf" class="cpf">
-            <br>
-
-            <label for="email">E-mail: </label>
+            <input type="text" maxlength="14" name="cpf" class="cpf" placeholder="Digite o CPF">
             <br>
 
-            <input type="text" maxlength="255" name="email" class="email" id=""> <i class="fa fa-plus fecha email" aria-hidden="true" title="Adicionar outro e-mail"></i><br>
+            <label for="email">E-mail:* </label>
+            <br>
+
+            <input type="text" maxlength="255" name="email" class="email" id="" placeholder="usuario@email.com"> <i class="fa fa-plus fecha email" aria-hidden="true" title="Adicionar outro e-mail"></i><br>
 
             <div class="divEmail2">
                 <label for="email2">E-mail2: </label>
                 <br>
-                <input type="text" maxlength="255" name="email2" class="email2" id="">
+                <input type="text" maxlength="255" name="email2" class="email2" id="" placeholder="usuario@email.com">
             </div>
 
             <label for="telefone">Telefone:* </label>
             <br>
-            <input type="text" maxlength="14" name="telefone" class="telefone" id=""> <i class="fa fa-plus fecha telefone" aria-hidden="true" title="Adicionar outro telefone"></i> <br>
+            <input type="text" maxlength="14" name="telefone" class="telefone" id="" placeholder="Digite o telefone"> <i class="fa fa-plus fecha telefone" aria-hidden="true" title="Adicionar outro telefone"></i> <br>
 
             <div class="divTelefone2">
                 <label for="telefone2">Telefone2: </label><br>
-                <input type="text" maxlength="14" name="telefone2" class="telefone2" id="">
+                <input type="text" maxlength="14" name="telefone2" class="telefone2" id="" placeholder="Digite o telefone">
             </div>
 
             <div class="errosForm">Favor, corrigir campos incorretos em vermelho</div><br>
@@ -57,10 +57,10 @@ if (!isset($_GET['editar'])) {
 
         if ($linha['id_usuario'] == $_GET['editar']) { ?>
 
-            <h1 class="home">Editar usuario</h1>
+            <h1 class="home">Editar contato</h1>
 
             <div class="formContainer">
-                <form action="./edita_usuario.php" method="post">
+                <form action="./edita_usuario.php" method="post" autocomplete="off">
 
                     <input type="hidden" name="id_usuario" value="<?php echo $linha['id_usuario'] ?>">
 

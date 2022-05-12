@@ -3,7 +3,7 @@
 <a href="?pagina=inserir_usuario" class="inserirNovo"><i class="fa fa-plus-circle" aria-hidden="true"></i> Inserir contato</a><br><br>
 
 
-<input type="text" id="entradaSearch" onkeyup="search()" placeholder="Procurar por CPFs" title="Digite o CPF"><br><br>
+<input type="text" id="entradaSearch" maxlength="14" onkeyup="search()" placeholder="Procurar por CPFs" title="Digite o CPF"><br><br>
 
 <table id="tabela" style="border:1px solid black;">
 
@@ -34,8 +34,11 @@
         echo "<td>" . $linha['telefone2'] . "</td>";
     ?>
 
-        <td><a href="?pagina=inserir_usuario&editar=<?php echo $linha['id_usuario']; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"> Editar</i></a></td>
+        <td><a href="?pagina=inserir_usuario&editar=<?php echo $linha['id_usuario']; ?>" title=" Editar Contato"><i class="fa fa-pencil-square-o" aria-hidden="true"> Editar</i></a></td>
+
         <td><a href="deleta_usuario.php?id_usuario=<?php echo $linha['id_usuario']; ?>" class="excluirContato"><i class="fa fa-trash" title="Excluir registro" aria-hidden="true"></i></a></td>
+
+        </tr>
 
     <?php } ?>
 </table>
