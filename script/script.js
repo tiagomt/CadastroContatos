@@ -120,21 +120,20 @@ if (document.querySelector(".cpf")) {
 
     botEnviar.addEventListener("click", (event) => {
 
-        if (!validaTelefone(telefone) || !validaNomeSobrenome(nome) || !validaNomeSobrenome(sobrenome) || !validaEmail(email) || !validaCPF(mask2.unmaskedValue)) {
+        if (!validaTelefone(telefone) || !validaNomeSobrenome(nome) || !validaNomeSobrenome(sobrenome) || (divTelefone2.style.display == "block" && !validaTelefone(telefone2)) || !validaEmail(email) || !validaCPF(mask2.unmaskedValue) || (divEmail2.style.display == "block") && !validaEmail(email2)) {
 
             try {
-                if (divEmail2.style.display || divTelefone2.style.display) {
-                    if (divEmail2.style.display) {
+                if (divEmail2.style.display == "block" && !validaEmail(email2)) {
 
-                        email2.style.boxShadow = "1px 2px 6px red"
-                        email2.value = ""
-                    }
+                    email2.style.boxShadow = "1px 2px 6px red"
+                    email2.value = ""
 
-                    if (divTelefone2.style.display) {
+                }
 
-                        telefone2.style.boxShadow = "1px 2px 6px red"
-                        telefone2.value = ""
-                    }
+                if (divTelefone2.style.display == "block" && !validaTelefone(telefone2)) {
+
+                    telefone2.style.boxShadow = "1px 2px 6px red"
+                    telefone2.value = ""
                 }
             } catch (err) {
 
