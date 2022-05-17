@@ -43,7 +43,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Tiago','Teixeira','123.456.789-09','tiago-tmt@hotmail.com','','(11)99718-4853',''),(2,'aaaaaaa','aaaaaa','123.456.789-09','aaaa@aaaaa.com','','(11)11111-1111',''),(3,'Tiago','Teixeira','123.456.789-09','tiago@gmail.com','','(11)11111-1111','');
+INSERT INTO `usuarios` VALUES (1,'Tiago','Teixeira','123.456.789-09','tiago@hotmail.com','','(11)55555-1111',''),(2,'aaaaaaa','aaaaaa','123.456.789-09','aaaa@aaaaa.com','','(11)11111-1111',''),(3,'Tiago','Teixeira','123.456.789-09','tiago@gmail.com','','(11)11111-1111','');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
