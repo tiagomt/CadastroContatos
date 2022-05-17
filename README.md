@@ -1,5 +1,6 @@
 # CadastroContatos
 Cadastro de contatos utilizando HTML, CSS, JavaScript, PHP e MySQL
+![cadastro](https://i.imgur.com/iF25aLe.png)
 
 # Como executar?
 Para executar o projeto no seu ambiente, os passos abaixo deverão ser executados.
