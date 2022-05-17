@@ -1,9 +1,12 @@
 <?php
 
-$server = 'localhost';
-$user = 'root';
-$password = '';
-$db = 'data';
+$dados = file_get_contents('./config.json');
+$dadosArray = json_decode($dados, true);
+
+$server = $dadosArray["server"];
+$user = $dadosArray["user"];
+$password = $dadosArray["password"];
+$db = $dadosArray["database"];
 
 $conexao = mysqli_connect($server, $user, $password, $db);
 
